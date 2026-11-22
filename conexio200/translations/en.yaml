@@ -1,0 +1,39 @@
+configuration:
+  url:
+    name: conexio URL
+    description: Base URL of the conexio 200 web interface, e.g. http://192.168.1.50
+  username:
+    name: Username
+    description: Web interface user (default admin).
+  password:
+    name: Password
+    description: Web interface password.
+  scan_interval:
+    name: Scan interval
+    description: Seconds between two reads.
+  device_id:
+    name: Device ID
+    description: Used for unique IDs, entity IDs (sensor.<device_id>_s1) and MQTT topics. Changing it creates new entities.
+  device_name:
+    name: Device name
+    description: Name of the device in Home Assistant.
+  names:
+    name: Sensor names
+    description: Optional display names as KEY=Name, e.g. S1=Kollektor. Can also be changed in the entity settings.
+  exclude:
+    name: Exclude
+    description: Keys not to create as entities, e.g. S10 or RT1.
+  mqtt_host:
+    name: MQTT host
+    description: Only needed when not using the Mosquitto broker app.
+  mqtt_port:
+    name: MQTT port
+  mqtt_username:
+    name: MQTT username
+  mqtt_password:
+    name: MQTT password
+  topic_prefix:
+    name: Topic prefix
+    description: MQTT topic prefix (default conexio).
+  log_level:
+    name: Log level

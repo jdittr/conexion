@@ -1,0 +1,41 @@
+name: conexio 200
+version: "1.0.0"
+slug: conexio200
+description: Reads a Prozeda conexio 200 (Grandis, HC 680, FWR, ...) and publishes all values to Home Assistant via MQTT discovery
+url: https://github.com/jdittr/conexion
+arch:
+  - amd64
+  - aarch64
+  - armv7
+init: false
+startup: application
+boot: auto
+services:
+  - mqtt:want
+options:
+  url: ""
+  username: admin
+  password: ""
+  scan_interval: 10
+  device_id: conexio200
+  device_name: conexio 200
+  names: []
+  exclude: []
+  log_level: info
+schema:
+  url: url
+  username: str
+  password: password
+  scan_interval: int(1,3600)
+  device_id: match(^[a-z0-9_]+$)
+  device_name: str
+  names:
+    - str
+  exclude:
+    - str
+  mqtt_host: str?
+  mqtt_port: port?
+  mqtt_username: str?
+  mqtt_password: password?
+  topic_prefix: str?
+  log_level: list(debug|info|warning|error)
